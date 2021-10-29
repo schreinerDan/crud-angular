@@ -46,6 +46,16 @@
     <td mat-cell *matCellDef="let user"> {{user.email}} </td>
   </ng-container>
 
+  <!-- actions Column -->
+ <ng-container matColumnDef="actions">
+  <th mat-header-cell *matHeaderCellDef> Ações </th>
+  <td mat-cell *matCellDef="let user">
+    <a class="action-link" [routerLink]="['/users/edit',user.id]" >Edit</a>
+    <a class="action-link" [routerLink]="['/users/view',user.id]" >View</a>
+    <a class="action-link" [routerLink]="['/users/delete',user.id]" >Del</a>
+  </td>
+</ng-container>
+
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>

@@ -13,7 +13,7 @@ export class UsersComponent implements OnInit {
   //  userServices:UsersService;
    //responseUser: ResponseUser;
    public users : Observable<User[]> ;
-   public displayedColumns = ['id','username','is_enabled','register_date','name','surname','email'];
+   public displayedColumns = ['id','username','is_enabled','register_date','name','surname','email','actions'];
 
   constructor(private userServices:UsersService) {
     //  this.userServices = new UsersService();

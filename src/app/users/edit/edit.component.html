@@ -1,0 +1,60 @@
+<mat-card class="form-class" *ngIf="dataLoaded">
+  <form [formGroup] ='editUserForm' (submit)='updateUser(userId)'>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </p>
+     <p>
+
+       <mat-label>Ativo</mat-label>
+      <input  type="checkbox" formControlNme="is_enabled"   >
+
+     </p>
+     <!-- <p>
+      <mat-form-field appearance="fill">
+
+      <mat-checkbox  (change)="editUserForm.get('is_enabled').setValue($event.checked?checked:null)"
+      [checked]="editUserForm.is_enabled==true" >is enabled</mat-checkbox>
+      </mat-form-field>
+     </p> -->
+     <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Register Date</mat-label>
+        <input matInput formControlName="register_date">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Sobrenome</mat-label>
+        <input matInput formControlName="surname">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>email</mat-label>
+        <input matInput formControlName="email">
+      </mat-form-field>
+    </p>
+
+  <div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+  </div>
+  </form>
+  </mat-card>
