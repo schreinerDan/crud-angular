@@ -2,20 +2,20 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { User } from './user.model';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  private url ="http://localhost:8080/users"
-  constructor(private http: HttpClient ) { }
+  // private url ="http://localhost:8080/users"
+  constructor() { }
 
-    getUsers():Observable<User>{
-      return this.http.get<User>(this.url)
+    // getUsers():Observable<ResponseUser>{
+    //   return this.http.get<ResponseUser>(this.url)
 
 
-    }
+    // }
 
 }
