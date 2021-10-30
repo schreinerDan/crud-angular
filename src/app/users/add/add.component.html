@@ -8,7 +8,7 @@
   </p>
   <p>
     <mat-form-field appearance="fill">
-      <mat-label>Enter your password</mat-label>
+      <mat-label>Digite sua Senha</mat-label>
       <input matInput [type]="hide ? 'password' : 'text'">
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -18,19 +18,19 @@
    <p>
 
      <mat-label>Ativo</mat-label>
-    <input  type="checkbox" formControlNme="is_enabled" >
+    <input  type="checkbox" formControlNme="is_enabled" checked disabled>
 
    </p>
 
    <p>
     <mat-form-field appearance="fill">
-      <mat-label>Register Date</mat-label>
-      <input matInput formControlName="register_date">
+      <mat-label>Data de Cadastro</mat-label>
+      <input matInput formControlName="register_date" >
     </mat-form-field>
   </p>
   <p>
     <mat-form-field appearance="fill">
-      <mat-label>Name</mat-label>
+      <mat-label>Nome</mat-label>
       <input matInput formControlName="name">
     </mat-form-field>
   </p>
@@ -42,7 +42,7 @@
   </p>
   <p>
     <mat-form-field appearance="fill">
-      <mat-label>email</mat-label>
+      <mat-label>Email</mat-label>
       <input matInput formControlName="email">
     </mat-form-field>
   </p>
