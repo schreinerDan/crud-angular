@@ -25,3 +25,22 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Instalation
+  1- Install VSCode
+      https://code.visualstudio.com/docs/?dv=osx
+
+  2 - Install Nodejs
+      https://nodejs.org/en/download/current/
+  
+  3 - Install Mysql
+      https://dev.mysql.com/downloads/mysql/
+
+  4 - Install Git
+
+  5 - Clone Repository
+      # git clone https://github.com/schreinerDan/crud-angular.git
+      # npm install
+      # npm start
+
+
