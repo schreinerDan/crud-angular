@@ -1,20 +1,22 @@
+<div class="list">
+
 <mat-card class="form-class">
-<form [formGroup] ='addUserForm' (submit)='createUser()'>
+  <h1>Adicionar Usuário</h1>
+  <form [formGroup] ='addUserForm' (submit)='createUser()'>
   <p>
     <mat-form-field appearance="fill">
-      <mat-label>Username</mat-label>
+      <mat-label>Nome de Usuário</mat-label>
       <input matInput formControlName="username">
     </mat-form-field>
-  </p>
-  <p>
+
     <mat-form-field appearance="fill">
       <mat-label>Digite sua Senha</mat-label>
-      <input matInput [type]="hide ? 'password' : 'text'">
+      <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
     </mat-form-field>
-  </p>
+    </p>
    <p>
 
      <mat-label>Ativo</mat-label>
@@ -33,8 +35,7 @@
       <mat-label>Nome</mat-label>
       <input matInput formControlName="name">
     </mat-form-field>
-  </p>
-  <p>
+
     <mat-form-field appearance="fill">
       <mat-label>Sobrenome</mat-label>
       <input matInput formControlName="surname">
@@ -52,3 +53,4 @@
 </div>
 </form>
 </mat-card>
+</div>

@@ -11,7 +11,7 @@ import { User } from '../models/user';
 })
 export class UsersComponent implements OnInit {
 
-   public usersF: User[]=[];
+   public users: User[]=[];
    public displayedColumns = ['id','username','is_enabled','register_date','name','surname','email','actions'];
 
   constructor(private userServices:UsersService) {
@@ -27,15 +27,16 @@ export class UsersComponent implements OnInit {
   public getAllUsers():void{
     this.userServices.find().subscribe(
       (response: User[])=>{
-        this.usersF = response;
+        this.users = response;
       }
     );
   }
   public searchUsers(key: string): void{
     console.log(key);
     const result: User[] =[];
-    for(const user of this.usersF){
+    for(const user of this.users){
       if(user.name.toLowerCase().indexOf(key.toLowerCase())!== -1 ||
+         user.surname.toLowerCase().indexOf(key.toLowerCase())!== -1 ||
          user.username.toLowerCase().indexOf(key.toLowerCase())!== -1 ||
          user.email.toLowerCase().indexOf(key.toLowerCase())!== -1) {
         result.push(user);
@@ -43,7 +44,7 @@ export class UsersComponent implements OnInit {
       }
     }
 
-    this.usersF = result;
+    this.users = result;
     if (result.length ===0 || !key)
     {
         this.getAllUsers();

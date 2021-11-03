@@ -41,7 +41,7 @@ export class EditComponent implements OnInit {
           this.dataLoaded=true;
           this.editUserForm =this.fb.group({
             'username': new FormControl(this.userDetails.username),
-            'password': new FormControl(''),
+            'password': new FormControl(this.userDetails.password),
             'is_enabled': new FormControl(this.userDetails.is_enabled),
             'register_date': new FormControl(this.userDetails.register_date),
             'name': new FormControl(this.userDetails.name),
