@@ -17,6 +17,10 @@ export class UsersService {
     public list() : Observable<User[]>  {
       return this.httpClient.get<User[]>(this.API + 'users');
     }
+
+    public find()   {
+      return this.httpClient.get(this.API + 'users');
+    }
     public view (id: string): Observable<User> {
       return this.httpClient.get<User>(this.API + 'users/' +id);
     }
