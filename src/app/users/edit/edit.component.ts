@@ -46,7 +46,8 @@ export class EditComponent implements OnInit {
             'register_date': new FormControl(this.userDetails.register_date),
             'name': new FormControl(this.userDetails.name),
             'surname': new FormControl(this.userDetails.surname),
-            'email': new FormControl(this.userDetails.email)
+            'email': new FormControl(this.userDetails.email),
+            'phone': new FormControl(this.userDetails.phone)
 
           });
         }

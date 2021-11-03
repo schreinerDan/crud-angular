@@ -12,7 +12,7 @@ import { User } from '../models/user';
 export class UsersComponent implements OnInit {
 
    public users: User[]=[];
-   public displayedColumns = ['id','username','is_enabled','register_date','name','surname','email','actions'];
+   public displayedColumns = ['id','username','password','is_enabled','register_date','name','surname','email','phone','actions'];
 
   constructor(private userServices:UsersService) {
 
