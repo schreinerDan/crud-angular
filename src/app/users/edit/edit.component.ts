@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../services/users.service';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
@@ -19,7 +19,8 @@ export class EditComponent implements OnInit {
 
   constructor(private usersService: UsersService,
      private activatedRoute: ActivatedRoute,
-     private fb:FormBuilder) { }
+     private fb:FormBuilder,
+     private router: Router) { }
 
   ngOnInit(): void {
     this.dataLoaded = false;
@@ -58,6 +59,8 @@ export class EditComponent implements OnInit {
   updateUser(id:string){
     this.usersService.editUser(this.editUserForm.value,id).subscribe(data =>{
       console.log("updated");
+      alert('Usuário Atualizado');
+      this.router.navigateByUrl('/users');
     },
     err=>{
       console.log(err);

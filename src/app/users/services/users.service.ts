@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
@@ -13,19 +14,20 @@ export class UsersService {
      *
      * @returns
      */
-    list () {
+    public list() : Observable<User[]>  {
       return this.httpClient.get<User[]>(this.API + 'users');
     }
-    view (id: string) {
-      return this.httpClient.get<User[]>(this.API + 'users/' +id);
+    public view (id: string): Observable<User> {
+      return this.httpClient.get<User>(this.API + 'users/' +id);
     }
-    addUser(userObj:any){
-      return this.httpClient.post(this.API + 'users', userObj);
+    public addUser(userObj:any):Observable<User>{
+      return this.httpClient.post<User>(this.API + 'users', userObj);
     }
-    editUser(userObj:any,id: string){
-      return this.httpClient.put(this.API + 'users/' + id, userObj);
+    public editUser(userObj:any,id: string) : Observable<User>{
+      return this.httpClient.put<User>(this.API + 'users/' + id, userObj);
     }
-    delUser(id:string){
-      return this.httpClient.delete(this.API + 'users/' + id);
+    public delUser(id:string) :Observable<void>{
+      return this.httpClient.delete<void>(this.API + 'users/' + id);
     }
+
 }
