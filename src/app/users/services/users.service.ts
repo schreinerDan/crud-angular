@@ -18,8 +18,8 @@ export class UsersService {
       return this.httpClient.get<User[]>(this.API + 'users');
     }
 
-    public find()   {
-      return this.httpClient.get(this.API + 'users');
+    public find():Observable<any>   {
+      return this.httpClient.get<User[]>(this.API + 'users');
     }
     public view (id: string): Observable<User> {
       return this.httpClient.get<User>(this.API + 'users/' +id);

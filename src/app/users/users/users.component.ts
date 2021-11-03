@@ -10,26 +10,26 @@ import { User } from '../models/user';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
-  //  userServices:UsersService;
-   //responseUser: ResponseUser;
-   public users : Observable<User[]> ;
+
    public usersF: User[]=[];
    public displayedColumns = ['id','username','is_enabled','register_date','name','surname','email','actions'];
 
   constructor(private userServices:UsersService) {
-    //  this.userServices = new UsersService();
-    this.users = this.userServices.list();
 
 
    }
 
-  ngOnInit(): void {
 
-    // this.userService.getUsers()
-    // .subscribe(res => this.responseUser = res)
+   ngOnInit(): void {
+    this.getAllUsers();
   }
-  public getUsers(){
-    this.users = this.userServices.list();
+
+  public getAllUsers():void{
+    this.userServices.find().subscribe(
+      (response: User[])=>{
+        this.usersF = response;
+      }
+    );
   }
   public searchUsers(key: string): void{
     console.log(key);
@@ -43,9 +43,10 @@ export class UsersComponent implements OnInit {
       }
     }
 
+    this.usersF = result;
     if (result.length ===0 || !key)
     {
-        this.getUsers();
+        this.getAllUsers();
     }
 
   }
