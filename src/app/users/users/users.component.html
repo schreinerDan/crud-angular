@@ -5,6 +5,14 @@
 
   </form>
 </mat-card>
+
+<p>
+  <mat-button-toggle value="hidden" (click)="toggleDuplicatedFilter()">Filtrar Duplicidade</mat-button-toggle>
+
+  <button mat-stroked-button (click)="cleanList()">Limpar</button>
+</p>
+
+
 <table mat-table [dataSource]="users" class="mat-elevation-z8">
 
   <!--- Note that these columns can be defined in any order.
