@@ -4,13 +4,22 @@
     <input type="search" (ngModelChange)="searchUsers(key.value)" #key="ngModel" ngModel name="key">
 
   </form>
+  <p>
+      <mat-button-toggle value="hidden" (click)="toggleDuplicatedFilter()">Filtrar Duplicidade</mat-button-toggle>
+
+      <button *ngIf="hasDuplicated" mat-stroked-button (click)="clearList()">Limpar</button>
+  </p>
+
+
 </mat-card>
+
 
 <p>
   <mat-button-toggle value="hidden" (click)="toggleDuplicatedFilter()">Filtrar Duplicidade</mat-button-toggle>
 
   <button mat-stroked-button (click)="cleanList()">Limpar</button>
 </p>
+
 
 
 <table mat-table [dataSource]="users" class="mat-elevation-z8">
