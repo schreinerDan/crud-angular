@@ -1,15 +1,9 @@
 
 import { Observable } from 'rxjs';
 import { UsersService } from './../services/users.service';
-
 import { Component, OnInit } from '@angular/core';
-
 import { User } from '../models/user';
-
-
-
 import { DIR_DOCUMENT_FACTORY } from '@angular/cdk/bidi/dir-document-token';
-
 
 
 @Component({
@@ -36,7 +30,7 @@ export class UsersComponent implements OnInit {
     this.getAllUsers();
   }
 
-  public toggleDuplicatedFilter() {
+  public toggleDuplicatedFilter():void {
 
     this.hidden = !this.hidden;
 
@@ -53,7 +47,7 @@ export class UsersComponent implements OnInit {
     this.hasDuplicated=false;
   }
 
-  public filterByDuplicate(){
+  public filterByDuplicate(): void{
     const usersDuplicated: User[] = [];
     this.users.forEach((item) => {
       if (this.users.filter(i => i.name === item.name).length > 1 &&
@@ -79,34 +73,11 @@ export class UsersComponent implements OnInit {
     );
   }
 
-  public toggleDuplicatedFilter() {
-    this.hidden = !this.hidden;
 
-    if(this.hidden==true){
-      this.filterByDuplicate();
-    }
-    else{
-      this.getAllUsers();
-    }
-
-  }
 
   public cleanList(){
     this.users = [];
-  }
-  public filterByDuplicate(){
-    const usersDuplicated: User[] = [];
-    this.users.forEach((item) => {
-      if (this.users.filter(i => i.name === item.name).length > 1 &&
-          this.users.filter(i => i.username === item.username).length > 1) {
-
-            usersDuplicated.push(item);
-      }
-
-    });
-
-    this.users = usersDuplicated;
-
+    this.hasDuplicated=false;
   }
 
 
