@@ -15,8 +15,6 @@ export class UsersComponent implements OnInit {
 
    public hidden = false;
    public hasDuplicated = false;
-
-
    public users: User[]=[];
    public displayedColumns = ['id','username','password','is_enabled','register_date','name','surname','email','phone','actions'];
 
